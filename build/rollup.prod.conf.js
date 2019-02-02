@@ -1,4 +1,5 @@
 import vue from 'rollup-plugin-vue'
+import commonjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import uglify from 'rollup-plugin-uglify'
@@ -21,6 +22,7 @@ const input = resolve( 'src/index.js' );
 const plugins = [
     nodeResolve(),
     vue(),
+    commonjs(),
     babel( {
         exclude: 'node_modules/**'
     } )
