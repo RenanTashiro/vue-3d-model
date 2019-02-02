@@ -128,7 +128,8 @@ export default {
             controls: null,
             allLights: [],
             clock: typeof performance === 'undefined' ? Date : performance,
-            reqId: null    // requestAnimationFrame id
+            reqId: null,    // requestAnimationFrame id
+            screenshot: null
         }
     },
     computed: {
@@ -513,7 +514,7 @@ export default {
         render() {
 
             this.renderer.render( this.scene, this.camera )
-
+            this.screenshot = this.renderer.domElement.toDataURL();
         }
     }
 }
