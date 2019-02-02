@@ -46691,7 +46691,8 @@ var script = {
             allLights: [],
             clock: typeof performance === 'undefined' ? Date : performance,
             reqId: null, // requestAnimationFrame id
-            screenshot: null
+            screenshot: null,
+            dimensions: null
         };
     },
 
@@ -46899,7 +46900,8 @@ var script = {
 
                 if (!object) return;
 
-                var distance = getSize(object).length();
+                this.dimensions = getSize(this.object);
+                var distance = this.dimensions.length();
 
                 camera.position.set(this.cameraPosition.x, this.cameraPosition.y, this.cameraPosition.z);
                 camera.rotation.set(this.cameraRotation.x, this.cameraRotation.y, this.cameraRotation.z);
